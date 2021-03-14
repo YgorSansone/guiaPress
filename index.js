@@ -7,8 +7,9 @@ const categoriesController = require("./categories/categories-controller");
 const articlesController = require("./articles/articles-controller");
 
 //models
-const category = require("./categories/Category");
 const article = require("./articles/Article");
+const category = require("./categories/Category");
+
 //view engine
 app.set("view engine", "ejs");
 
