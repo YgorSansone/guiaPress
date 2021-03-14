@@ -3,13 +3,13 @@ const app = express();
 const bodyparser = require("body-parser");
 const connection = require("./databases/database");
 //controllers
-const categoriesController = require("./categories/categories-controller.js");
-const articlesController = require("./articles/articles-controller.js");
+const categoriesController = require("./categories/categories-controller");
+const articlesController = require("./articles/articles-controller");
 
 //models
-
-const category = require("./categories/Category");
 const article = require("./articles/Article");
+const category = require("./categories/Category");
+
 //view engine
 app.set("view engine", "ejs");
 
