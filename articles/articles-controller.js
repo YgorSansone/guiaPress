@@ -3,7 +3,7 @@ const router = express.Router();
 const Categories = require("../categories/Category")
 const Article = require("./Article")
 const slugify = require("slugify");
-const Category = require('../categories/Category');
+// const Category = require('../categories/Category');
 router.get("/admin/articles",(req,res)=>{
     Article.findAll({
         include:[{model: Categories}]
@@ -55,7 +55,7 @@ router.get("/admin/articles/edit/:id", (req, res) => {
     if (!isNaN(id)) {
         Article.findByPk(id).then((article) => {
             if (article != undefined) {
-                Category.findAll().then(categories =>{
+                Categories.findAll().then(categories =>{
                     res.render("admin/articles/edit", {
                         article: article,
                         categories: categories
@@ -114,7 +114,7 @@ router.get("/articles/page/:num",(req,res)=>{
             articles : articles,
             next: next
         }
-        Category.findAll().then(categories => {
+        Categories.findAll().then(categories => {
             res.render("admin/articles/page", {
                 result: result, categories: categories
             })
