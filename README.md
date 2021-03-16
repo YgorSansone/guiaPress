@@ -31,6 +31,8 @@
  
 - [x] Bootstrap
 
+- [x] TinyMCE
+
 - **Backend**
 
 - [x] Express
